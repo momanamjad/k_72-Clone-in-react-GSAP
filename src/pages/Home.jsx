@@ -10,7 +10,7 @@ const Home = () => {
       </div>
       <div className="h-screen w-screen relative flex flex-col justify-between">
         <HomeHerotext />
-        {/* <HomeBottomText /> */}
+        <HomeBottomText />
       </div>
     </div>
   );
