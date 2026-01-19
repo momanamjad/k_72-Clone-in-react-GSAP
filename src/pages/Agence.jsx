@@ -4,7 +4,7 @@ const Agence = () => {
   return (
     <div>
       <div>
-        <h1>
+        <h1 className="text-[15vw] uppercase leading-[15vw]">
           Sixty- <br />
           seventh <br />
           Twelve
