@@ -8,54 +8,53 @@ const Agence = () => {
   const imageDivRef = useRef(null);
   const imageRef = useRef(null);
   const imageArray = [
-       'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg',
+    "https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
   ];
   useGSAP(function () {
-
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
         // markers: true,
-        start: 'top 28%',
-        end: 'top -70%',
+        start: "top 28%",
+        end: "top -70%",
         pin: true,
         pinSpacing: true,
         pinReparent: true,
-        pinType: 'transform',
-        scrub: 1, // 
+        pinType: "transform",
+        scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
-            imageIndex = Math.floor(elem.progress * imageArray.length)
+            imageIndex = Math.floor(elem.progress * imageArray.length);
           } else {
-            imageIndex = imageArray.length - 1
+            imageIndex = imageArray.length - 1;
           }
-          imageRef.current.src = imageArray[imageIndex]
-        }
-      }
-    })
-  })
+          imageRef.current.src = imageArray[imageIndex];
+        },
+      },
+    });
+  });
   return (
     <div>
-      <div className="section1">
+      <div className="section1 relative py-1 ">
         <div
           ref={imageDivRef}
-          className="h-[20vw] rounded-4xl  w-[15vw] top-80 left-[30vw] overflow-hidden object-cover absolute"
+          className=" absolute h-[20vw] rounded-4xl  w-[15vw] top-20 left-[30vw] overflow-hidden object-cover "
         >
           <img
             ref={imageRef}
