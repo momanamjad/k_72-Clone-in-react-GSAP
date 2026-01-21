@@ -4,7 +4,7 @@ const FullScreenNav = () => {
   return (
     <div
       id="fullscreen"
-      className="h-screen absolute text-white w-full py-40 overflow-x-hidden  bg-black"
+      className="h-screen absolute text-white w-full py-60 overflow-x-hidden  bg-black"
     >
       <div className="">
         <div className="link border-t  relative border-white ">
