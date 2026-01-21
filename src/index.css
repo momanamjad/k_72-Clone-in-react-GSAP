@@ -18,3 +18,24 @@ body::-webkit-scrollbar {
   background-color: #D3FD50;
   color: #111;
 }
+.moveX{
+  animation: moveAnimation 10s linear infinite;
+}
+
+@keyframes moveAnimation {
+  from {
+    transform: translateX(0%);
+    
+  }
+  to {
+    transform: translateX(-100%);
+  
+  }
+}
+.moveLink{
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+.moveLink:hover{
+  opacity: 1;
+}
