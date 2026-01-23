@@ -4,9 +4,12 @@ const FullScreenNav = () => {
   return (
     <div
       id="fullscreen"
-      className="h-screen absolute text-white w-full py-60 overflow-x-hidden  bg-black"
+      className="h-screen absolute overflow-hidden text-white w-full  overflow-x-hidden  bg-black"
     >
-      <div className="">
+      <div className="flex w-full justify-baseline items-start">
+            
+      </div>
+      <div className="py-23 ">
         <div className="link border-t  relative border-white ">
           <h1 className="text-[8vw] uppercase leading-[1.2] text-center">
             PROJECTS
@@ -136,7 +139,7 @@ const FullScreenNav = () => {
             </div>
           </div>
         </div>
-        <div className="link border-t  relative border-white ">
+        <div className="link border-t border-b  relative border-white ">
           <h1 className="text-[8vw] uppercase leading-[1.2] text-center">
             BLOG
           </h1>
