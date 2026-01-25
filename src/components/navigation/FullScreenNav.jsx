@@ -201,7 +201,7 @@ const FullScreenNav = () => {
                 alt=""
               />
               <h2 className=" whitespace-nowrap text-[8vw] uppercase leading-[1.2] text-center">
-                TO   EVERYTHING
+                TO  SEE EVERYTHING
               </h2>
               <img
                 className="lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover"
