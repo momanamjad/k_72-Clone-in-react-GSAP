@@ -16,7 +16,7 @@ const FullScreenNav = () => {
       </div>
       </div>
   <div className="relative">
-     <div className="flex justify-between ">
+     <div className="flex justify-between">
        <div className="">
         <div className="w-30">
           <svg
