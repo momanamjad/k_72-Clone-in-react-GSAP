@@ -5,7 +5,7 @@ const   Navbar = () => {
   const navGreenRef = useRef(null);
  const [navOpen,setNavOpen]= useContext(NavbarContext)
   return (
-    <div className="flex fixed top-0  justify-between w-full z-5  ">
+    <div className="flex fixed top-0 justify-between w-full z-5  ">
       <div className="p-4">
         <div className="w-30">
           <svg
@@ -22,7 +22,7 @@ const   Navbar = () => {
           </svg>
         </div>
       </div>
-      <div
+      <div 
       onClick={()=>{
         setNavOpen(true)
       }}
@@ -32,7 +32,7 @@ const   Navbar = () => {
         onMouseLeave={() => {
           navGreenRef.current.style.height = "0%  ";
         }}
-        className=" w-[238px] h-[50px] relative bg-black"
+        className=" w-[238px] h-[50px] relative bg-black cursor-pointer"
       >
         <div
           ref={navGreenRef}

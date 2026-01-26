@@ -9,55 +9,81 @@ const FullScreenNav = () => {
     const [navOpen, setNavOpen] = useContext(NavbarContext)
     console.log(navOpen)
 
+
+    function gsapAnimation() {
+        const tl = gsap.timeline()
+        tl.to('.fullscreennav', {
+            display: 'block'
+        })
+        tl.to('.stairing', {
+            delay: 0.2,
+            height: '100%',
+            stagger: {
+                amount: -0.3
+            }
+        })
+        tl.to('.link', {
+            opacity: 1,
+            rotateX: 0,
+            stagger: {
+                amount: 0.3
+            }
+        })
+        tl.to('.navlink', {
+            opacity: 1
+        })
+    }
+    function gsapAnimationReverse() {
+        const tl = gsap.timeline()
+        tl.to('.link', {
+            opacity: 0,
+            rotateX: 90,
+            stagger: {
+                amount: 0.1
+            }
+        })
+        tl.to('.stairing', {
+            height: 0,
+            stagger: {
+                amount: 0.1
+            }
+        })
+        tl.to('.navlink', {
+            opacity: 0
+        })
+        tl.to('.fullscreennav', {
+            display: 'none',
+        })
+    }
+
+
     useGSAP(function () {
-      const timeline = gsap.timeline();
-      timeline.from('.staring', {
-        height: 0,
-        stagger: {        
-          amount: -0.2,
-        },
-      });
-      
-      
-      timeline.from(fullNavLinksRef.current,{
-        opacity:0
-      })
-      timeline.from('.link',{
-  rotateX:90,
-  opacity:0,
-   stagger: {
-          amount: 0.2,
-        },
-})
-timeline.pause()
-if(navOpen){
-  fullscreenref.current.style.display='block'
-  timeline.play()
-}else{
-  fullscreenref.current.style.display='none'
+        if (navOpen) {
 
-  timeline.reverse()
-}
-    },[navOpen]);
+            gsapAnimation()
+        } else {
 
+            gsapAnimationReverse()
 
+        }
+    }, [navOpen])
   return (
     <div
     ref={fullscreenref}
-      id="fullscreen"
-      className="h-screen absolute z-99   text-white w-full  overflow-x-hidden  p-4 bg-black"
+      id="fullscreennav"
+      className="fullscreennav h-screen absolute z-99 hidden  text-white w-full  overflow-x-hidden  p-4 bg-black"
     >
       <div  className="h-screen w-full fixed "> 
-        <div className=" staring h-full  w-full flex ">
-        <div className=" staring h-screen w-1/5 bg-black"> </div>
-        <div className=" staring h-screen w-1/5 bg-black"> </div>
-        <div className=" staring h-screen w-1/5 bg-black"> </div>
-        <div className=" staring h-screen w-1/5 bg-black"> </div>
-        <div className=" staring h-screen w-1/5 bg-black"> </div>
+        <div className=" stairing h-full  w-full flex ">
+        <div className=" stairing h-screen w-1/5 bg-black"> </div>
+        <div className=" stairing h-screen w-1/5 bg-black"> </div>
+        <div className=" stairing h-screen w-1/5 bg-black"> </div>
+        <div className=" stairing h-screen w-1/5 bg-black"> </div>
+        <div className=" stairing h-screen w-1/5 bg-black"> </div>
       </div>
       </div>
   <div ref={fullNavLinksRef} className="relative">
-     <div className="flex justify-between">
+     <div className="navlink flex p-5 items-start w-full  justify-between">
        <div className="">
         <div className="w-30">
           <svg
@@ -82,7 +108,7 @@ if(navOpen){
         <div className="h-44 w-0.5 rotate-45 right-0 origin-top bg-[#D3FD50] absolute"> </div>
       </div>
     </div>
-      <div className="py-23">  
+      <div className="py-23 cursor-pointer">  
         <div className="link origin-top border-t  relative border-white ">
           <h1 className="text-[8vw] uppercase leading-[1.2] text-center">
             PROJECTS
