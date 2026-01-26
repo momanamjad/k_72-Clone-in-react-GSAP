@@ -1,22 +1,24 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef } from "react";
+import React, { useContext, useRef, } from "react";
+import { NavbarContext } from "../../context/NavContext";
 
 const FullScreenNav = () => {
+  const fullscreenref = useRef(null)
     const fullNavLinksRef = useRef(null)
+    const [navOpen, setNavOpen] = useContext(NavbarContext)
+    console.log(navOpen)
 
     useGSAP(function () {
       const timeline = gsap.timeline();
       timeline.from('.staring', {
         height: 0,
-        stagger: {
+        stagger: {        
           amount: -0.2,
         },
       });
       
-      // timeline.to(".stare", {
-      //   y: "0%",
-      // });
+      
       timeline.from(fullNavLinksRef.current,{
         opacity:0
       })
@@ -27,13 +29,23 @@ const FullScreenNav = () => {
           amount: 0.2,
         },
 })
-    });
+timeline.pause()
+if(navOpen){
+  fullscreenref.current.style.display='block'
+  timeline.play()
+}else{
+  fullscreenref.current.style.display='none'
+
+  timeline.reverse()
+}
+    },[navOpen]);
 
 
   return (
     <div
+    ref={fullscreenref}
       id="fullscreen"
-      className="h-screen absolute  text-white w-full  overflow-x-hidden  p-4 bg-black"
+      className="h-screen absolute z-99   text-white w-full  overflow-x-hidden  p-4 bg-black"
     >
       <div  className="h-screen w-full fixed "> 
         <div className=" staring h-full  w-full flex ">
@@ -62,7 +74,10 @@ const FullScreenNav = () => {
           </svg>
         </div>
       </div>
-      <div className="h-32 w-32  relative cursor-pointer">
+      <div 
+       onClick={()=>{
+        setNavOpen(false)
+      }} className="h-32 w-32  relative cursor-pointer">
         <div className="h-44 w-0.5 -rotate-45 origin-top bg-[#D3FD50] absolute"> </div>
         <div className="h-44 w-0.5 rotate-45 right-0 origin-top bg-[#D3FD50] absolute"> </div>
       </div>
