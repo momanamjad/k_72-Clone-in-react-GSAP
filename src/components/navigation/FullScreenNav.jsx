@@ -16,7 +16,7 @@ const FullScreenNav = () => {
             display: 'block'
         })
         tl.to('.stairing', {
-            delay: 0.2,
+            delay: 0,
             height: '100%',
             stagger: {
                 amount: -0.3
