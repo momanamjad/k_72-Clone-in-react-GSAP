@@ -3,8 +3,6 @@ import React, { createContext, useState } from "react";
 
 export const NavbarContext = createContext()
 const NavContext = ({ children }) => {
-  // const NavBarContext = createContext();
-
   const [navOpen,setNavOpen]=useState(false)
   
 
