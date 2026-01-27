@@ -6,8 +6,8 @@ const   Navbar = () => {
  const [navOpen,setNavOpen]= useContext(NavbarContext)
   return (
     <div className="flex fixed top-0 justify-between w-full z-5  ">
-      <div className="p-4">
-        <div className="w-30">
+      <div className="lg:p-4 p-4">
+        <div className="lg:w-30 w-24">
           <svg
             className=" w-full cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
@@ -32,15 +32,15 @@ const   Navbar = () => {
         onMouseLeave={() => {
           navGreenRef.current.style.height = "0%  ";
         }}
-        className=" w-[238px] h-[50px] relative bg-black cursor-pointer"
+        className=" lg:w-[238px] w-48 lg:px-12 lg:h-16 h-12 relative bg-black cursor-pointer"
       >
         <div
           ref={navGreenRef}
           className="absolute top-0 w-full h-0  bg-[#D3FD50] cursor-pointer transition-all"
         ></div>
-        <div className="relative h-full px-12 flex flex-col gap-1.5 justify-center items-end">
-          <div className="w-18 h-0.5 bg-white"> </div>
-          <div className="w-10 h-0.5 bg-white"> </div>
+        <div className="relative h-full px-12 flex flex-col lg:gap-1.5 gap-0.5 justify-center items-end">
+          <div className="lg:w-18 w-12 h-0.5 bg-white"> </div>
+          <div className="lg:w-10 w-6 h-0.5 bg-white"> </div>
         </div>
       </div>
     </div>
