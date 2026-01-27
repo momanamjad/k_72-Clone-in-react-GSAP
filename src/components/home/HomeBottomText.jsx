@@ -2,23 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 const HomeBottomText = () => {
   return (
-    <div className="flex font-[font2] justify-center select-none gap-2 xs:gap-3 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 pb-4 xs:pb-5 sm:pb-6 md:pb-8 lg:pb-10 flex-wrap px-2 xs:px-3 sm:px-4">
-      <Link
-        to="/projects"
-        className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight border-2 xs:border-2 sm:border-3 border-white uppercase rounded-full px-2 xs:px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 py-1 xs:py-1.5 sm:pt-3 sm:pb-2 md:pt-4 md:pb-3 lg:pt-4 lg:pb-3 hover:text-[
-#D3FD50] hover:border-[
-#D3FD50] select-none transition-colors duration-200"
-      >
-        PROJECTS
-      </Link>
-      <Link
-        to="/agence"
-        className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight border-2 xs:border-2 sm:border-3 border-white uppercase rounded-full px-2 xs:px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 py-1 xs:py-1.5 sm:pt-3 sm:pb-2 md:pt-4 md:pb-3 lg:pt-4 lg:pb-3 hover:text-[
-#D3FD50] hover:border-[
-#D3FD50] select-none transition-colors duration-200"
-      >
-        AGENCE
-      </Link>
+    <div className='font-[font2] flex items-center justify-center gap-2 '>
+      <p className='absolute lg:w-[17vw] w-64 lg:right-20 right-0 bottom-28  lg:bottom-72 font-[font1] lg:text-lg text-xs lg:leading-relaxed leading-tight'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K72 est une agence qui pense chaque action pour nourrir la marque. Demain, dans 5 mois et dans 5 ans. On cherche la friction qui crée l’étincelle pour générer de l’émotion. Pour assurer une relation honnête, on est sans filtre, on dit ce qui doit être dit, on fait ce qui doit être fait.</p>
+      <div className='lg:border-3 border-2 hover:border-[#D3FD50] hover:text-[#D3FD50] lg:h-44 flex items-center px-3 pt-1 lg:px-14 border-white rounded-full uppercase'>
+        <Link className='text-[6vw] lg:mt-6' to='/projects'>Projects</Link>
+      </div>
+      <div className='lg:border-3 border-2 hover:border-[#D3FD50] hover:text-[#D3FD50]  lg:h-44 flex items-center px-3 pt-1 lg:px-14 border-white rounded-full uppercase'>
+        <Link className='text-[6vw] lg:mt-6' to='/agence'>agence</Link>
+      </div>
     </div>
   );
 };
