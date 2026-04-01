@@ -26,18 +26,20 @@ const Projects = () => {
   ];
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(function () {
-    gsap.from('.hero', {
-      height: "100px",
-      stagger: {
-        amount: 0.4
-      },
-      scrollTrigger: {
-        trigger: '.lol',
-        markers:true,
-        start: 'top 100%',
-        end: 'top -150%',
-        scrub: true,
-      },
+    gsap.utils.toArray(".hero").forEach((item) => {
+      gsap.from(item, {
+        opacity: 0,
+        y: 100,
+        scale: 0.8,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 95%",
+          end: "top 60%",
+          scrub: 1,
+        },
+      });
     });
   });
   return (
