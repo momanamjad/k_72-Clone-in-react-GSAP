@@ -2,7 +2,7 @@ import React from "react";
 import Video from "../components/home/Video";
 import HomeHerotext from "../components/home/HomeHerotext.jsx";
 
-import HomeBottomText from "../components/home/homeBottomText";
+import HomeBottomText from "../components/home/HomeBottomText";
 
 const Home = () => {
   return (
